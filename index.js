@@ -38,9 +38,10 @@ castomFunc(userInput, userInput2);
 
 function castomFunc(usInput, usInput2){
     let count = 1;
+    let number = 0;
     while(count <= usInput2){
         count++;
-        usInput = usInput * usInput2;
+        number = usInput * usInput;
     }
-    console.log(usInput);
+    console.log(number);
 }
