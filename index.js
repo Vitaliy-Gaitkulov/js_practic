@@ -1,34 +1,40 @@
-'use strict';
+ isAdult();
+ function isAdult(){
+   const year = +prompt('Введите свой возраст');
+   return year >= 18;
+ }
 
-// Таски на циклы. Каждую задачу решить всеми тремя циклами!
-// 1) Вывод чисел от 25 до 0 (порядок уменьшения)
+ checkMultiplicity(25, 5);
+ function checkMultiplicity(a, b){
+   const a = a % b;
+  return a === 0;
+ }
 
-let i = 25;
-while(i>0){
-    console.log(i);
-    i--;
+triangle(5,5,9);
+function triangle(a, b, c){
+  return a + b > c && a + c > b && b + c > a;
 }
 
-// 2) Вывод чисел от 10 до 50, которые кратны 5
-let a = 10;
-while(a <= 50){
-    console.log(a);
-    a +=5;
+romb(5,5);
+function romb(a, b){
+  const s = a*b;
+  console.log("площадь ромба: "+ s);
 }
-// 3)  Найти сумму чисел в пределах от 1 до 100.
-let num1 = 22,num2 = 33;
-while(true){
-    if(num1, num2 <= 100 && num1, num2 >= 0){
-        console.log(num1 + num2);
-        break;
-    }
-    break;
-}
-// 4) предлагать пользователю решить пример (2 + 2 * 2) до тех пор, пока он его не решит
 
-while(true){
-    let userInput = +prompt('решить пример (2 + 2 * 2) :');
-    if(userInput === 6){
-        break;
-    }
+cylinder(5,5);
+function cylinder(a, b){
+  const s = 2 * 3.14 * b * (a + b);
+  console.log("площадь цилиндра: " + s);
+}
+
+triangleArea(5,5);
+function triangleArea(a, b){
+  const s = a * b * 0.5;
+  console.log("площадь треугольника: " + s);
+}
+
+rectangleArea(5,5);
+function rectangleArea(a, b){
+  const s = a * b;
+  console.log("площадь прямоугольника: " + s);
 }
