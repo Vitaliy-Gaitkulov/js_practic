@@ -1,22 +1,22 @@
  isAdult();
  function isAdult(){
    const year = +prompt('Введите свой возраст');
-   return year >= 18;
+   return console.log(year >= 18);
  }
 
  checkMultiplicity(25, 5);
  function checkMultiplicity(a, b){
-   const a = a % b;
-  return a === 0;
+   const x = a % b;
+  return console.log(x === 0);
  }
 
 triangle(5,5,9);
 function triangle(a, b, c){
-  return a + b > c && a + c > b && b + c > a;
+  return console.log(a + b > c && a + c > b && b + c > a);
 }
 
-romb(5,5);
-function romb(a, b){
+rombArea(5,5);
+function rombArea(a, b){
   const s = a*b;
   console.log("площадь ромба: "+ s);
 }
