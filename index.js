@@ -1,40 +1,12 @@
- isAdult();
- function isAdult(){
-   const year = +prompt('Введите свой возраст');
-   return console.log(year >= 18);
- }
+'use strict';
 
- checkMultiplicity(25, 5);
- function checkMultiplicity(a, b){
-   const x = a % b;
-  return console.log(x === 0);
- }
+const PROTOCOL = 'http://';
+const SERVER_IP = '127.0.0.1:3000';
+const path = '/path/';
 
-triangle(5,5,9);
-function triangle(a, b, c){
-  return console.log(a + b > c && a + c > b && b + c > a);
+function createQuery(path){
+    const url = `${PROTOCOL}${SERVER_IP}${path}`;
+    return url;
 }
 
-rombArea(5,5);
-function rombArea(a, b){
-  const s = a*b;
-  console.log("площадь ромба: "+ s);
-}
-
-cylinder(5,5);
-function cylinder(a, b){
-  const s = 2 * 3.14 * b * (a + b);
-  console.log("площадь цилиндра: " + s);
-}
-
-triangleArea(5,5);
-function triangleArea(a, b){
-  const s = a * b * 0.5;
-  console.log("площадь треугольника: " + s);
-}
-
-rectangleArea(5,5);
-function rectangleArea(a, b){
-  const s = a * b;
-  console.log("площадь прямоугольника: " + s);
-}
+console.log(createQuery(path));
