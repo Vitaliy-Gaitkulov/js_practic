@@ -7,9 +7,6 @@ const arr = [12, 15, 20, 25, 59, 79];
 console.log(average(arr));
 
 function getMinAndMaxNumbers() {
-    const args1 = Array.from(arguments);
-    const args2 = [...arguments];
-    console.log(args1, args2);
     return [getMinValue(...arguments), getMaxValue(...arguments)];
   }
   
@@ -47,7 +44,7 @@ function getMinAndMaxNumbers() {
 
   function setRandomArray(){
       let rand = [];
-      for(let i = 0; i<10;i++){
+      for(let i = 0; i < 10; i++){
         rand[i] = getRandomArbitrary();
       }
       return rand;
