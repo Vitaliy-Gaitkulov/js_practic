@@ -1,45 +1,26 @@
-class RangeValidator{
-  constructor(from, to){
-    this._from = from;
-    this._to = to;
+class User{
+  constructor(name, surname){
+    this._name = name;
+    this._surname = surname;
   }
 
-  set setFrom(v){
-    if(typeof v == 'number'){
-      return this._from = v;
+  getFullName(){
+    return `${this._name} ${this._surname}`;
+  }
+}
+
+class Student extends User{
+  constructor(name, surname, year){
+    super(name, surname);
+    this._year = year;
+  }
+
+  getCourse(){
+    let currentYear = new Date();
+    let course = currentYear.getFullYear() - this._year;
+    if(course > 5){
+      return `this user is not student`;
     }
-    throw TypeError("Error type");
-  }
-
-  get getFrom(){
-    return this._from;
-  }
-
-  set setTo(v){
-    if(typeof v == 'number'){
-      return this._to = v;
-    }
-    throw TypeError("неверный тип");
-  }
-
-  get getTo(){
-    return this._to;
-  }
-
-  getRange(){
-    let range = [this._from, this._to];
-    return range;
-  }
-
-  validate(v){
-    if(typeof v != 'number'){
-      throw TypeError("неверный тип");
-    }
-    
-    if(v >= this._from && v <= this._to){
-      return `Число ${v} прошло валидацию`;
-    }
-
-    throw TypeError('Число не прошло валидацию');
+    return course;
   }
 }
