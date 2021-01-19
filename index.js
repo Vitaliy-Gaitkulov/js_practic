@@ -24,15 +24,19 @@ class MyArray {
     return lastItem;
   }
 
-  //не работает
-  unshift(){
-    let a = new MyArray();
-    for (const index of arguments) {
-      a.push(index);
+  unshift(...args){
+    args.reverse();
+    for(const item of args){
+      this.length = this.length + 1;
+      let leng = this.length;
+      for(let i = 0; i <= this.length; i++){
+        this[leng] = this[leng - 1];
+        leng--;
+      }
+      this[0] = item;
     }
-    let result = a.concat(this);
-
-    return result.length;
+    delete this[this.length];
+    return this.length;
   }
 
   shift(){
