@@ -46,20 +46,22 @@ class Faculty {
 }
 
 class Student extends Faculty{
-    constructor(faculty, chair, name, surname, isMale, adress){
+    constructor(name, surname, isMale, adress, faculty, chair){
         super(faculty , chair);
-        this.name = name;
-        this.surname = surname;
-        this.isMale = isMale;
-        this.adress = adress;
+        this._name = name;
+        this._surname = surname;
+        this._isMale = isMale;
+        this._adress = adress;
     }
 
     set SetName(v){
-        this.name = v;
+        if(typeof v === "string"){
+            this._name = v;
+        }
     }
 
     get GetName(){
-        return this.name;
+        return this._name;
     }
 
     info = ()=>{
@@ -85,18 +87,18 @@ function initArray(array){
     }
 
     // //3.2
-    // for(let i = 0; i < array.length; i++){
-    //     if(array[i]%2 === 0){
-    //         console.log(array[i]);
-    //     }
-    // }
+    for(let i = 0; i < array.length; i++){
+        if(array[i]%2 === 0){
+            console.log(array[i]);
+        }
+    }
 
     // //3.3
-    // for(const i of array){
-    //     if(i%2 === 0){
-    //         console.log(i);
-    //     }
-    // }
+    for(const i of array){
+        if(i%2 === 0){
+            console.log(i);
+        }
+    }
 
     //3.4
     array.forEach((element, index) => {
@@ -106,14 +108,108 @@ function initArray(array){
     });
     
     //3.5
-    // let summNull = 0;
-    // array.forEach(element => {
-    //     if(element === 0){
-    //         summNull++;
-    //         console.log('summ 0 index: '+summNull)
-    //         console.log(array.indexOf(element));
-    //     }
-    // });
+    let summNull = 0;
+    array.forEach(element => {
+        if(element === 0){
+            summNull++;
+            console.log('summ 0 index : '+summNull)
+            console.log(array.indexOf(element));
+        }
+    });
 }
 
-initArray(arr);
+//4
+class Book{
+    constructor(author, title, yearOfPublication, publisher){
+        this._author = author;
+        this._title = title;
+        this._yearOfPublication = yearOfPublication;
+        this._publisher = publisher;
+    }
+
+    set SetAuthor(v){
+        if(typeof v === "string"){
+            this._author = v;
+        }
+    }
+
+    get GetAuthor(){
+        return this._author;
+    }
+
+    set SetTitle(v){
+        if(typeof v === "string"){
+            this._title = v;
+        }
+    }
+
+    get GetTitle(){
+        return this._title;
+    }
+
+    set SetYearOfPublication(v){
+        if(typeof v === "number"){
+            this._yearOfPublication = v;
+        }
+    }
+
+    get GetYearOfPublication(){
+        return this._yearOfPublication;
+    }
+
+    set SetPublisher(v){
+        if(typeof v === "string"){
+            this._publisher = v;
+        }
+    }
+
+    get GetPublisher(){
+        return this._publisher;
+    }
+}
+
+class EBook extends Book{
+    constructor(author, title, yearOfPublication, publisher, format, electronicNumber){
+        super(author, title, yearOfPublication, publisher);
+        this._format = format;
+        this._electronicNumber = electronicNumber;
+    }
+
+    set SetFormat(v){
+        if(typeof v === "string"){
+            this._format = v;
+        }
+    }
+
+    get GetFormat(){
+        return this._format;
+    }
+
+    set SetElectronicNumber(v){
+        if(typeof v === "string"){
+            this._electronicNumber = v;
+        }
+    }
+
+    get GetElectronicNumber(){
+        return this._electronicNumber;
+    }
+}
+
+//5
+function fizzBuzz(n){
+    for(let i = 0; i <= n; i++){
+        if(i%3 === 0 && i%5 === 0){
+            console.log("fizzbuzz");
+            continue;
+        }else if(i%3 === 0){
+            console.log("fizz");
+            continue;
+        }else if(i%5 === 0){
+            console.log("buzz");
+            continue;
+        }else{
+            console.log(i);
+        }
+    }
+}
